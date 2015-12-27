@@ -1,0 +1,4 @@
+Añade una interfaz para hacer consultas SQL directamente y mostrar
+los resultados en una tabla.
+<br/>
+<b>Accesible desde :</b> Admin &gt; SQL Editor.

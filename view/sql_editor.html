@@ -10,18 +10,23 @@
    <div class="container-fluid">
       <div class="row">
          <div class="col-sm-12">
-            <h2>
-               SQL
-               <a href="{$fsc->url()}" target="_blank" class="btn btn-xs btn-default" title="Nueva pestaña">
-                  <span class="glyphicon glyphicon-plus"></span>
-               </a>
-            </h2>
+            <div class="page-header">
+               <h1>
+                  SQL Editor
+                  <a href="{$fsc->url()}" target="_blank" class="btn btn-xs btn-default" title="Nueva pestaña">
+                     <span class="glyphicon glyphicon-plus"></span>
+                  </a>
+               </h1>
+               <p class="help-block">
+                  Solamente los administradores pueden ejecutar SQL directamente.
+               </p>
+            </div>
          </div>
       </div>
       <div class="row">
          <div class="col-sm-10">
             <div class="form-group">
-               <textarea name="sql" class="form-control" rows="4">{$fsc->sentencia}</textarea>
+               <textarea name="sql" class="form-control" rows="4" placeholder="SENTENCIA SQL...">{$fsc->sentencia}</textarea>
             </div>
          </div>
          <div class="col-sm-2">

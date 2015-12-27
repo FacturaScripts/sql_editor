@@ -53,6 +53,7 @@ class sql_editor extends fs_controller
          else if( substr( strtolower($this->sentencia), 0, 6 ) == 'select' )
          {
             $this->resultados = $this->db->select($this->sentencia);
+            $this->new_message('Secuencia ejecutada.');
          }
          else
          {
