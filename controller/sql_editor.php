@@ -50,14 +50,24 @@ class sql_editor extends fs_controller
          {
             $this->new_error_msg('Solamente un administrador puede usar esta página.');
          }
-         else if( substr( strtolower($this->sentencia), 0, 6 ) == 'select' OR substr( strtolower($this->sentencia), 0, 4 ) == 'show' )
+         else if( substr( strtolower($this->sentencia), 0, 6 ) == 'select' )
+         {
+            $this->resultados = $this->db->select($this->sentencia);
+            $this->new_message('Secuencia ejecutada.');
+         }
+         else if( substr( strtolower($this->sentencia), 0, 4 ) == 'show' )
+         {
+            $this->resultados = $this->db->select($this->sentencia);
+            $this->new_message('Secuencia ejecutada.');
+         }
+         else if( substr( strtolower($this->sentencia), 0, 8 ) == 'describe' )
          {
             $this->resultados = $this->db->select($this->sentencia);
             $this->new_message('Secuencia ejecutada.');
          }
          else
          {
-            if( $this->db->exec($this->sentencia, FALSE) )
+            if( $this->db->exec($this->sentencia) )
             {
                $this->new_message('Secuencia ejecutada correctamente.');
             }
